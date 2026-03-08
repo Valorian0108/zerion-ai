@@ -1,0 +1,24 @@
+{
+  "name": "zerion-cli",
+  "version": "0.1.0",
+  "description": "Zerion for AI developers: hosted MCP docs, wallet-analysis skill, and a JSON-first CLI.",
+  "type": "module",
+  "bin": {
+    "zerion-cli": "./cli/zerion-cli.js"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "zerion",
+    "ai",
+    "mcp",
+    "wallet",
+    "openclaw",
+    "cli"
+  ],
+  "license": "MIT"
+}
