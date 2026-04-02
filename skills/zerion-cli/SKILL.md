@@ -50,11 +50,14 @@ Get yours at [dashboard.zerion.io](https://dashboard.zerion.io).
 
 ### Option B: x402 pay-per-call (no signup)
 
-No API key needed. Pay $0.01 USDC per request on Base via the [x402 protocol](https://www.x402.org/).
+No API key needed. Pay $0.01 USDC per request via the [x402 protocol](https://www.x402.org/). Supports EVM (Base) and Solana — auto-detected from key format.
 
 ```bash
-# Required for x402 payments
+# EVM (Base) — 0x-prefixed hex private key
 export WALLET_PRIVATE_KEY="0x..."
+
+# Solana — base58 encoded keypair
+export WALLET_PRIVATE_KEY="5C1y..."
 
 # Per-command flag
 zerion-cli wallet analyze <address> --x402
@@ -70,7 +73,7 @@ The agent's wallet handles payment automatically using `WALLET_PRIVATE_KEY`.
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `ZERION_API_KEY` | Yes (unless x402) | API key from dashboard.zerion.io |
-| `WALLET_PRIVATE_KEY` | Yes (for x402) | EVM private key for the wallet paying x402 requests on Base |
+| `WALLET_PRIVATE_KEY` | Yes (for x402) | Private key for x402 payments (0x-hex for EVM/Base, base58 for Solana) |
 | `ZERION_X402` | No | Set to `true` to enable x402 pay-per-call globally |
 | `ZERION_API_BASE` | No | Override API base URL (default: `https://api.zerion.io/v1`) |
 
