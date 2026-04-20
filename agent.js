@@ -1,17 +1,20 @@
-const wallet = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045";
+const walletName = "hackathon-agent";
+const walletAddress = "0x6B5c4949FE14e9c46138eF18AF802dABd324E0d2";
 const chain = "base";
+const policy = "policy-standard-670fc47a";
 
-console.log("Zerion Frontier Agent started");
-console.log("Watching wallet:", wallet);
-console.log("Chain:", chain);
+console.log("Safe Zerion Wallet Watcher Agent");
+console.log("Wallet:", walletName);
+console.log("Address:", walletAddress);
+console.log("Chain lock:", chain);
+console.log("Policy:", policy);
 
-const command = `node cli/zerion.js portfolio ${wallet} --chain ${chain} --pretty`;
-
-console.log("\nTomorrow, when rate limit resets, run:");
-console.log(command);
+console.log("\nCurrent mode: read-only until wallet is funded.");
+console.log("Next real onchain step: fund this test wallet with tiny Base ETH, then perform one tiny Zerion-routed swap.");
 
 console.log("\nSafety rules:");
-console.log("- Read-only mode");
+console.log("- Test wallet only");
+console.log("- Base chain only");
+console.log("- Scoped agent policy enabled");
 console.log("- No main wallet");
-console.log("- No private key");
-console.log("- No trades yet");
+console.log("- No private key shared");
